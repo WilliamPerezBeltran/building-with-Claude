@@ -1,0 +1,171 @@
+# Claude CLI Cost Optimization Rules (70% Token Reduction)
+
+## 🎯 Objective
+
+Minimize token usage while maximizing output quality when using Claude CLI.
+
+---
+
+## 1. Scope Control (CRITICAL)
+
+* Always work on **single files or small pieces**
+* Never analyze full projects unless strictly necessary
+
+**Do:**
+
+* "analyze this file: auth_service.py"
+
+**Avoid:**
+
+* "analyze my entire project"
+
+---
+
+## 2. Task Decomposition
+
+* Break features into **small, atomic tasks**
+* 1 prompt = 1 responsibility
+
+**Do:**
+
+* "create User model"
+* "add JWT authentication"
+
+**Avoid:**
+
+* "build full auth system with roles, permissions, email verification"
+
+---
+
+## 3. Output Limitation
+
+* Always constrain output size
+
+**Use:**
+
+* "return only code"
+* "no explanation"
+* "keep it short"
+
+---
+
+## 4. Avoid Redundant Context
+
+* Do NOT paste the same code repeatedly
+* Reference previous context when possible
+
+**Do:**
+
+* "use the previous model and add validation"
+
+**Avoid:**
+
+* re-sending 300+ lines every time
+
+---
+
+## 5. File Input Instead of Copy-Paste
+
+* Prefer piping files
+
+**Use:**
+
+* `claude "fix bug" < file.py`
+
+**Avoid:**
+
+* pasting large code blocks into prompts
+
+---
+
+## 6. Precision Over Vagueness
+
+* Be explicit and targeted
+
+**Do:**
+
+* "fix null pointer at line 42"
+
+**Avoid:**
+
+* "fix my code"
+
+---
+
+## 7. Iteration Control
+
+* Reduce back-and-forth
+
+**Do:**
+
+* "generate production-ready version with validation and tests"
+
+**Avoid:**
+
+* multiple vague refinements
+
+---
+
+## 8. Context Reset
+
+* Clear context when switching topics
+
+**Command:**
+
+* `/clear`
+
+---
+
+## 9. Model Selection Strategy
+
+* Use cheaper models when possible
+
+**Guideline:**
+
+* Simple tasks → lightweight model
+* Standard dev → balanced model
+* Complex reasoning → advanced model
+
+---
+
+## 10. Prompt Efficiency Pattern
+
+**Template:**
+
+* Task
+* Scope
+* Constraints
+
+**Example:**
+"Create a Django REST endpoint for login using JWT. Return only code. No explanation."
+
+---
+
+## 🚀 Golden Rule
+
+> The cost is not in the tool — it is in how you use it.
+
+---
+
+## 📉 Expected Impact
+
+Applying these rules:
+
+* Token usage ↓ 50–70%
+* Cost ↓ significantly
+* Speed ↑
+* Output quality ↑
+
+---
+
+## ✅ Recommended Workflow
+
+1. Define small task
+2. Execute with constrained prompt
+3. Validate
+4. Move to next task
+
+---
+
+End of file.
+
