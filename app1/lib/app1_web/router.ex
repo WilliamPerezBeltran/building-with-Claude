@@ -22,6 +22,8 @@ defmodule App1Web.Router do
                                         #✔ Genera múltiples rutas automáticamente
                                         #✔ Forma parte del DSL del router
 
+    resources "/products", ProductController
+
     get "/", PageController, :home
   end
 
