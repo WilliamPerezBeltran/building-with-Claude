@@ -52,19 +52,41 @@ defmodule HelloWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
 
+  plug :check_promo_code
+
   plug :introspect
   plug HelloWeb.Router
   
-  def introspect(conn, _opts) do
-  IO.puts"""
-  Verb: #{inspect(conn.method)}
-  Verb: #{inspect(conn.host)}
-  Verb: #{inspect(conn.req_headers)}
-  """
-    conn
-  
-   
+  def introspect( conn, _opts) do
+    IO.puts"""
+    Verb: #{inspect(conn.method)}
+    Verb: #{inspect(conn.host)}
+    Verb: #{inspect(conn.req_headers)}
+    promo: #{inspect(conn.params["promo"])}
+    """
+      conn
   end
+
+  #def promo_code(%Plug.Conn{} = conn, _opts) do
+  #  code = conn.params["promo"]
+  #  if code == "secret-code" do 
+  #    IO.puts("SI HAY PROMOCION")
+  #    assign(conn, :promo, true)
+  #  else
+  #    IO.puts("NO HAY PROMOCION")
+  #    assign(conn, :promo, false)
+  #  end
+  #end
+
+
+  def check_promo_code(%Plug.Conn{:params => %{"promo" => "secret-code"}} = conn, _opts) do
+    assign(conn, :promo, true)
+  end
+
+  def check_promo_code(%Plug.Conn{} = conn, _opts) do
+    assign(conn, :promo, false)
+  end
+  
 
 
 end

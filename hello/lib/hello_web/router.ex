@@ -24,6 +24,7 @@ defmodule HelloWeb.Router do
     get "/hello/:messenger", HelloController, :show
     get "/products", ProductController, :index
     get "/product/:id", ProductController, :show
+    get "/carros/", ProductController, :index
   end
 
   # Other scopes may use custom stacks.

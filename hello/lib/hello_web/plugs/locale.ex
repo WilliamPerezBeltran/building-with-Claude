@@ -19,3 +19,10 @@ end
 # %Plug.Conn{params: params} = conn
 # conn tiene que ser un Plug.Conn
 #y tiene que tener campo params
+
+
+
+#Entonces esto:
+#%{"locale" => loc}
+#significa:
+#“Busca en el mapa la clave "locale" y guarda su valor en la variable loc”
