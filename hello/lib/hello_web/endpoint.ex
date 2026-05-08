@@ -52,7 +52,7 @@ defmodule HelloWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
 
-  plug :check_promo_code
+  plug :check_promo_code, "hello there!"
 
   plug :introspect
   plug HelloWeb.Router
@@ -79,11 +79,15 @@ defmodule HelloWeb.Endpoint do
   #end
 
 
-  def check_promo_code(%Plug.Conn{:params => %{"promo" => "secret-code"}} = conn, _opts) do
+  def check_promo_code(%Plug.Conn{:params => %{"promo" => "secret-code"}} = conn, opts) do
+    IO.inspect(opts)
+    IO.inspect(opts)
     assign(conn, :promo, true)
   end
 
-  def check_promo_code(%Plug.Conn{} = conn, _opts) do
+  def check_promo_code(%Plug.Conn{} = conn, opts) do
+    IO.inspect(opts)
+    IO.inspect(opts)
     assign(conn, :promo, false)
   end
   

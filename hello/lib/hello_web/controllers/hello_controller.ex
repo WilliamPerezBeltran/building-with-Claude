@@ -16,6 +16,7 @@ defmodule HelloWeb.HelloController do
         IO.puts("----------")
         IO.puts("----------")
         IO.puts("""
+        Verb: #{inspect(params)} 
         Verb: #{inspect(conn.method)} 
         host: #{inspect(conn.host)} 
         Verb: #{inspect(conn.req_headers)} 

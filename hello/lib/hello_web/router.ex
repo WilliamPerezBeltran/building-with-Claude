@@ -7,8 +7,9 @@ defmodule HelloWeb.Router do
   plug :fetch_live_flash  # Maneja mensajes flash (notificaciones temporales)
   plug :put_root_layout, html: {HelloWeb.Layouts, :root}  # Define el layout base de las páginas HTML
   plug :protect_from_forgery  # Protección contra ataques CSRF
-  plug :put_secure_browser_headers  # Agrega headers de seguridad HTTP
-  plug HelloWeb.Plugs.Locale, "en"  # Define el idioma por defecto (locale)
+  plug :put_secure_browser_headers  # Agrega headers de seguridad HTTP    | protects form posts from cross-site forgery.
+    plug HelloWeb.Plugs.Locale, "en"  # Define el idioma por defecto (locale) |
+  plug HelloWeb.Plugs.SetConsole, "pc" 
   end
 
   pipeline :api do
