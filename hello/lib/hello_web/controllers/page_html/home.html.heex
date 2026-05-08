@@ -19,3 +19,20 @@
 </form>
 
 <p>selected console: {@console}</p>
+
+<section :if={@promo}>
+  <h2>promo <%= @promo %> </h2>
+  <h2>promo fi hay codigo de promocion </h2>
+  <h2>promo fi hay codigo de promocion </h2>
+  <h2>promo fi hay codigo de promocion </h2>
+  <h2>promo fi hay codigo de promocion </h2>
+  <h2>promo fi hay codigo de promocion </h2>
+</section>
+
+
+
+
+<p>this is the full url <%= url(~p"/products")%></p>
+<p><%= url(~p"/products")%></p>
+<a href={~p"/products"}>redirect products</a>
+

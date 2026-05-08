@@ -2,12 +2,11 @@ defmodule HelloWeb.ProductController do
   use HelloWeb, :controller
 
   def index(conn, params) do
-    IO.puts("---------------------------------------------")
     dbg(conn)
-    IO.puts("---------------------------------------------")
     dbg(params)
    
     render(conn, :index)
+    #redirect(to: ~p"wrong")
   end
 
   # def show(conn,params)do
