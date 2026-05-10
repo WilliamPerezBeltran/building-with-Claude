@@ -16,6 +16,10 @@ defmodule HelloWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :authenticated do 
+    plug HelloWeb.Plugs.AuthPlug
+  end
+
   scope "/", HelloWeb do
     pipe_through :browser
 
@@ -26,6 +30,18 @@ defmodule HelloWeb.Router do
     get "/products", ProductController, :index
     get "/product/:id", ProductController, :show
     get "/carros/", ProductController, :index
+    get "/practice", PracticeController, :index
+
+    get "/login", AuthController, :login_page
+    post "/login", AuthController, :login
+    get "/logout", AuthController, :logout
+  end
+
+
+  scope "/", HelloWeb do
+    pipe_through [:browser, :authenticated]
+
+    get "/dashboard", DashboardController, :index
   end
 
   # Other scopes may use custom stacks.
