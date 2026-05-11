@@ -1,3 +1,8 @@
+# Conceptos Fundamentales de una Aplicación Web Completa
+
+## Core Concepts
+
+```text
 Authentication
 Authorization
 Sessions
@@ -29,3 +34,211 @@ Search
 WebSockets
 Rate limiting
 Encryption
+```
+
+---
+
+# Authentication
+
+Quién eres.
+
+## Conceptos
+
+```text
+sign up
+sign in
+sign out
+reset password
+email verification
+2FA
+```
+
+---
+
+# Sessions
+
+Mantener al usuario conectado.
+
+## Conceptos
+
+```text
+session
+cookies
+jwt
+remember me
+session expiration
+```
+
+---
+
+# Security
+
+Proteger la aplicación.
+
+## Conceptos
+
+```text
+csrf
+xss
+sql injection
+bcrypt
+argon2
+rate limiting
+https
+hashing
+encryption
+```
+
+---
+
+# Users y Permissions
+
+Control de acceso.
+
+## Conceptos
+
+```text
+admin
+moderator
+user
+guest
+roles
+permissions
+authorization
+policies
+```
+
+---
+
+# Backend
+
+Lógica del sistema.
+
+## Conceptos
+
+```text
+controllers
+services
+business logic
+contexts
+middlewares
+```
+
+---
+
+# Frontend
+
+Interfaz visual.
+
+## Conceptos
+
+```text
+components
+state
+forms
+ui
+responsive design
+```
+
+---
+
+# Database
+
+Persistencia de datos.
+
+## Conceptos
+
+```text
+schemas
+migrations
+queries
+indexes
+relations
+transactions
+```
+
+---
+
+# APIs
+
+Comunicación entre sistemas.
+
+## Conceptos
+
+```text
+REST
+GraphQL
+JSON
+endpoints
+tokens
+```
+
+---
+
+# Real-Time Features
+
+Tiempo real.
+
+## Conceptos
+
+```text
+websockets
+chat
+notifications
+live updates
+pubsub
+```
+
+---
+
+# Infrastructure
+
+Infraestructura y deployment.
+
+## Conceptos
+
+```text
+docker
+nginx
+deployment
+ci/cd
+ssl
+hosting
+```
+
+---
+
+# Quality
+
+Calidad y mantenimiento.
+
+## Conceptos
+
+```text
+testing
+logs
+monitoring
+analytics
+error tracking
+```
+
+---
+
+# Conceptos en Phoenix Framework
+
+En Phoenix Framework muchos de esos conceptos aparecen como:
+
+```text
+router
+controller
+liveview
+ecto schema
+changeset
+repo
+plug
+endpoint
+socket
+channel
+pubsub
+context
+```
